@@ -11,6 +11,7 @@
 %define patuser root
 %define patgrp root
 %define patdir /var/opt/%{produser}/patterns
+%define mode 544
 %define category OES
 
 Name:         sca-patterns-oes
@@ -49,11 +50,11 @@ install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes11all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes1all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2sp3
-install -m 544 patterns/%{category}/all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/all
-install -m 544 patterns/%{category}/oes11all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes11all
-install -m 544 patterns/%{category}/oes1all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes1all
-install -m 544 patterns/%{category}/oes2all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2all
-install -m 544 patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2sp3
+install -m %{mode} patterns/%{category}/all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/all
+install -m %{mode} patterns/%{category}/oes11all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes11all
+install -m %{mode} patterns/%{category}/oes1all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes1all
+install -m %{mode} patterns/%{category}/oes2all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2all
+install -m %{mode} patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2sp3
 
 %files
 %defattr(-,%{patuser},%{patgrp})
@@ -65,11 +66,11 @@ install -m 544 patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{catego
 %dir %{patdir}/%{category}/oes1all
 %dir %{patdir}/%{category}/oes2all
 %dir %{patdir}/%{category}/oes2sp3
-%attr(555,%{patuser},%{patgrp}) %{patdir}/%{category}/all/*
-%attr(555,%{patuser},%{patgrp}) %{patdir}/%{category}/oes11all/*
-%attr(555,%{patuser},%{patgrp}) %{patdir}/%{category}/oes1all/*
-%attr(555,%{patuser},%{patgrp}) %{patdir}/%{category}/oes2all/*
-%attr(555,%{patuser},%{patgrp}) %{patdir}/%{category}/oes2sp3/*
+%attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/all/*
+%attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes11all/*
+%attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes1all/*
+%attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes2all/*
+%attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes2sp3/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
