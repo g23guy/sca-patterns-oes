@@ -2,7 +2,7 @@
 
 # Title:       Lost CASA credentials for Novell DNS
 # Description: CASA credentials were lost and need to be recreated
-# Modified:    2013 Jun 24
+# Modified:    2014 Jan 15
 
 ##############################################################################
 #  Copyright (C) 2013 SUSE LLC
@@ -47,8 +47,9 @@ use SDP::SUSE;
 	PROPERTY_NAME_PRIMARY_LINK."=META_LINK_TID",
 	PROPERTY_NAME_OVERALL."=$GSTATUS",
 	PROPERTY_NAME_OVERALL_INFO."=None",
-	"META_LINK_TID=http://www.suse.com/support/kb/doc.php?id=7005275",
-	"META_LINK_MISC=http://www.novell.com/support/php/search.do?cmd=displayKC&docType=kc&externalId=7008568"
+	"META_LINK_TID=https://www.novell.com/support/kb/doc.php?id=7006446",
+	"META_LINK_Script=https://www.novell.com/communities/coolsolutions/cool_tools/novell-dns-casa-repair-tool/",
+	"META_LINK_MISC=https://www.novell.com/support/kb/doc.php?id=7008568"
 );
 
 
