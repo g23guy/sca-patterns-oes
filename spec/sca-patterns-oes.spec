@@ -21,7 +21,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      1
+Release:      2
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -75,6 +75,9 @@ install -m %{mode} patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{ca
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Tue Jan 28 2014 jrecord@suse.com
+- includes pertinent patterns from sca-patterns-basic
+
 * Thu Jan 16 2014 jrecord@suse.com
 - relocated files according to FHS
 - added and fixed links in casadns-00001.pl
