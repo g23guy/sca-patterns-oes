@@ -21,7 +21,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      2
+Release:      3
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -77,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Tue Jan 28 2014 jrecord@suse.com
 - includes pertinent patterns from sca-patterns-basic
+- includes pertinent patterns from sca-patterns-ncs
 
 * Thu Jan 16 2014 jrecord@suse.com
 - relocated files according to FHS
