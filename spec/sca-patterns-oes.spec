@@ -1,4 +1,7 @@
-# Copyright (C) 2013 SUSE LLC
+# spec file for package sca-patterns-oes
+#
+# Copyright (C) 2014 SUSE LLC
+#
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
@@ -21,7 +24,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      4
+Release:      5
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -75,15 +78,4 @@ install -m %{mode} patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{ca
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Wed Jan 29 2014 jrecord@suse.com
-- includes pertinent patterns from sca-patterns-samba
-- includes pertinent patterns from sca-patterns-basic
-- includes pertinent patterns from sca-patterns-ncs
-
-* Thu Jan 16 2014 jrecord@suse.com
-- relocated files according to FHS
-- added and fixed links in casadns-00001.pl
-
-* Wed Dec 20 2013 jrecord@suse.com
-- separated as individual RPM package
 

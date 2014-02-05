@@ -1,0 +1,18 @@
+-------------------------------------------------------------------
+Fri Jan 31 19:39:56 UTC 2014 - jrecord@suse.com
+
+- includes pertinent patterns from sca-patterns-samba
+- includes pertinent patterns from sca-patterns-basic
+- includes pertinent patterns from sca-patterns-ncs
+
+-------------------------------------------------------------------
+Thu Jan 16 09:54:34 MST 2014 jrecord@suse.com
+
+- relocated files according to FHS
+- added and fixed links in casadns-00001.pl
+
+-------------------------------------------------------------------
+Wed Dec 20 09:54:34 MST 2013 jrecord@suse.com
+
+- separated as individual RPM package
+
