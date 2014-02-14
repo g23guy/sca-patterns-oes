@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Feb 14 21:15:09 UTC 2014 - jrecord@suse.com
+
+- Added pattern
+  oes2all/named-7014558.py
+  oes11all/named-7014558.py
+
+-------------------------------------------------------------------
 Fri Jan 31 19:39:56 UTC 2014 - jrecord@suse.com
 
 - includes pertinent patterns from sca-patterns-samba
