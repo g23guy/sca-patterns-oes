@@ -1,16 +1,10 @@
 -------------------------------------------------------------------
-<<<<<<< HEAD
 Thu Feb 20 20:28:44 UTC 2014 - jrecord@suse.com
 
 - Added pattern
-  edir-7014591.py
-=======
-Fri Feb 14 21:15:09 UTC 2014 - jrecord@suse.com
-
-- Added pattern
+  oes11/all/edir-7014591.py
   oes2all/named-7014558.py
   oes11all/named-7014558.py
->>>>>>> 0c1b2c675bd71b374d8720821952a31f073b30de
 
 -------------------------------------------------------------------
 Fri Jan 31 19:39:56 UTC 2014 - jrecord@suse.com
