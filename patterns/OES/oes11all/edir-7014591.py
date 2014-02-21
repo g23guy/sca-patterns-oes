@@ -1,4 +1,4 @@
- #!/usr/bin/python
+#!/usr/bin/python
 
 # Title:       eDir patch core dumps in LDAP
 # Description: NDSD cores in LDAP after upgrading to eDirectory 8.8 SP8 Patch 1 or 8.8 SP7 Patch 5
