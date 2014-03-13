@@ -20,11 +20,11 @@
 Name:         sca-patterns-oes
 Summary:      Supportconfig Analysis Patterns for OES
 URL:          https://bitbucket.org/g23guy/sca-patterns-oes
-Group:        Documentation/SuSE
+Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      8.1
+Release:      9
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
