@@ -16,6 +16,7 @@
 %define patgrp root
 %define mode 544
 %define category OES
+%define fdupes
 
 Name:         sca-patterns-oes
 Summary:      Supportconfig Analysis Patterns for OES
@@ -24,10 +25,11 @@ Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      9
+Release:      10
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
+BuildRequires: fdupes
 Requires:     sca-patterns-base
 
 %description
@@ -59,6 +61,7 @@ install -m %{mode} patterns/%{category}/oes11all/* $RPM_BUILD_ROOT/%{patdir}/%{c
 install -m %{mode} patterns/%{category}/oes1all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes1all
 install -m %{mode} patterns/%{category}/oes2all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2all
 install -m %{mode} patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2sp3
+%fdupes %{buildroot}
 
 %files
 %defattr(-,%{patuser},%{patgrp})
