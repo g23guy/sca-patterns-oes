@@ -24,7 +24,7 @@ Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      11.1
+Release:      12
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -48,14 +48,12 @@ Authors:
 pwd;ls -la
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}
-install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes11all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes1all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2all
 install -d $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2sp3
 install -d $RPM_BUILD_ROOT/usr/share/doc/packages/%{sca_common}
 install -m 444 patterns/COPYING.GPLv2 $RPM_BUILD_ROOT/usr/share/doc/packages/%{sca_common}
-install -m %{mode} patterns/%{category}/all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/all
 install -m %{mode} patterns/%{category}/oes11all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes11all
 install -m %{mode} patterns/%{category}/oes1all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes1all
 install -m %{mode} patterns/%{category}/oes2all/* $RPM_BUILD_ROOT/%{patdir}/%{category}/oes2all
@@ -67,14 +65,12 @@ install -m %{mode} patterns/%{category}/oes2sp3/* $RPM_BUILD_ROOT/%{patdir}/%{ca
 %dir %{patdirbase}
 %dir %{patdir}
 %dir %{patdir}/%{category}
-%dir %{patdir}/%{category}/all
 %dir %{patdir}/%{category}/oes11all
 %dir %{patdir}/%{category}/oes1all
 %dir %{patdir}/%{category}/oes2all
 %dir %{patdir}/%{category}/oes2sp3
 %dir /usr/share/doc/packages/%{sca_common}
 %doc %attr(-,root,root) /usr/share/doc/packages/%{sca_common}/*
-%attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/all/*
 %attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes11all/*
 %attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes1all/*
 %attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes2all/*
