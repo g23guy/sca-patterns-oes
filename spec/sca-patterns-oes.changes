@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Wed Apr 16 14:49:15 UTC 2014 - jrecord@suse.com
+
+- Moved OES/all to oes1all, oes2all and oes11all
+
+-------------------------------------------------------------------
 Mon Mar 24 18:27:49 UTC 2014 - jrecord@suse.com
 
 - Added Pattern
