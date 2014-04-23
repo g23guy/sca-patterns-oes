@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Wed Apr 23 01:49:51 UTC 2014 - jrecord@suse.com
+
+- Fixed reg-00001.pl uninitialized value
+
+-------------------------------------------------------------------
 Wed Apr 16 14:49:15 UTC 2014 - jrecord@suse.com
 
 - Moved OES/all to oes1all, oes2all and oes11all

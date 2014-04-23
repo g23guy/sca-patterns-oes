@@ -2,7 +2,7 @@
 
 # Title:       OES Update Catalog Missing After Registration
 # Description: Checks if the OES Updates catalog is missing and preventing update registration.
-# Modified:    2013 Jun 25
+# Modified:    2014 Apr 22
 
 ##############################################################################
 #  Copyright (C) 2013-2012 SUSE LLC
@@ -71,6 +71,9 @@ sub validateUpdateChannels {
 			next if ( /-*\+-*\+-*/ ); # skip header line
 			$_ =~ s/\s+\|\s+/\|/g; # remove white space
 			$_ =~ s/^\s+|\s+$//g;
+			if ( m/ZMD does not appear to be running/i ) {
+				SDP::Core::updateStatus(STATUS_ERROR, "ZMD does not appear to be running");
+			}
 			# get the update channels needed if subscribed to them
 			@LINE_CONTENT = split(/\|/, $_);
 			if ( $LINE_CONTENT[1] =~ /SLES10-SP.-Updates/i ) {
