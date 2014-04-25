@@ -2,10 +2,10 @@
 
 # Title:       OES Update Catalog Missing After Registration
 # Description: Checks if the OES Updates catalog is missing and preventing update registration.
-# Modified:    2014 Apr 22
+# Modified:    2014 Apr 25
 
 ##############################################################################
-#  Copyright (C) 2013-2012 SUSE LLC
+#  Copyright (C) 2014 SUSE LLC
 ##############################################################################
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -57,7 +57,7 @@ use SDP::SUSE;
 sub validateUpdateChannels {
 	SDP::Core::printDebug('> validateUpdateChannels', 'BEGIN');
 	my $FILE_OPEN = 'updates.txt';
-	my $SECTION = 'rug ca';
+	my $SECTION = 'installation_sources -s';
 	my @CONTENT = ();
 	my @LINE_CONTENT = ();
 	my $UP_SLE = '';
@@ -76,20 +76,20 @@ sub validateUpdateChannels {
 			}
 			# get the update channels needed if subscribed to them
 			@LINE_CONTENT = split(/\|/, $_);
-			if ( $LINE_CONTENT[1] =~ /SLES10-SP.-Updates/i ) {
-				if ( $LINE_CONTENT[0] =~ /yes/i ) {
+			if ( $LINE_CONTENT[4] =~ /SLES10-SP.-Updates/i ) {
+				if ( $LINE_CONTENT[1] =~ /yes/i ) {
 					$UPS_SLE = 1; # sub'd to channel
 				} else {
 					$UPS_SLE = 0; # not sub'd to channel, but it exists.
 				}
-				$UP_SLE = $LINE_CONTENT[1];
-			} elsif ( $LINE_CONTENT[1] =~ /OES2.*Updates/i ) {
-				if ( $LINE_CONTENT[0] =~ /yes/i ) {
+				$UP_SLE = $LINE_CONTENT[4];
+			} elsif ( $LINE_CONTENT[4] =~ /OES2.*Updates/i ) {
+				if ( $LINE_CONTENT[1] =~ /yes/i ) {
 					$UPS_OES = 1; # sub'd to channel
 				} else {
 					$UPS_OES = 0; # not sub'd to channel, but it exists.
 				}
-				$UP_OES = $LINE_CONTENT[1];
+				$UP_OES = $LINE_CONTENT[4];
 			}
 		}
 	} else {
@@ -97,15 +97,15 @@ sub validateUpdateChannels {
 	}
 	if ( $UPS_SLE >= 0 && $UPS_OES >= 0 ) {
 		if ( $UP_SLE =~ /SLES10-SP4-Updates/ && $UP_OES =~ /OES2-SP3-Updates/ ) {
-			SDP::Core::updateStatus(STATUS_ERROR, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
+			SDP::Core::updateStatus(STATUS_IGNORE, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
 		} elsif ( $UP_SLE =~ /SLES10-SP3-Updates/ && $UP_OES =~ /OES2-SP3-Updates/ ) {
-			SDP::Core::updateStatus(STATUS_ERROR, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
+			SDP::Core::updateStatus(STATUS_IGNORE, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
 		} elsif ( $UP_SLE =~ /SLES10-SP3-Updates/ && $UP_OES =~ /OES2-SP2-Updates/ ) {
-			SDP::Core::updateStatus(STATUS_ERROR, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
+			SDP::Core::updateStatus(STATUS_IGNORE, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
 		} elsif ( $UP_SLE =~ /SLES10-SP2-Updates/ && $UP_OES =~ /OES2-SP1-Updates/ ) {
-			SDP::Core::updateStatus(STATUS_ERROR, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
+			SDP::Core::updateStatus(STATUS_IGNORE, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
 		} elsif ( $UP_SLE =~ /SLES10-SP1-Updates/ && $UP_OES =~ /OES2-Updates/ ) {
-			SDP::Core::updateStatus(STATUS_ERROR, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
+			SDP::Core::updateStatus(STATUS_IGNORE, "OES2 Update Catalogs Verified: $UP_SLE, $UP_OES");
 		} else {
 			SDP::Core::updateStatus(STATUS_WARNING, "Mismatched OES2 Update Catalogs: $UP_SLE, $UP_OES");
 		}
