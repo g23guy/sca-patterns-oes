@@ -2,10 +2,10 @@
 
 # Title:       Confirm the node is seeing the SBD partition
 # Description: NCS nodes need to see the SBD partition to function properly.
-# Modified:    2013 Jun 21
+# Modified:    2014 Apr 23
 
 ##############################################################################
-#  Copyright (C) 2013 SUSE LLC
+#  Copyright (C) 2014 SUSE LLC
 ##############################################################################
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -53,12 +53,11 @@ use SDP::SUSE;
 # Program execution functions
 ##############################################################################
 sub sbdPartitionMissing {
-	printDebug('>', 'sbdPartitionMissing');
 	my $RCODE       = 1;
 	my $FILE_OPEN   = 'novell-ncs.txt';
 	my $SECTION     = '/sbin/sbdutil -f';
 	my @CONTENT     = ();
-	my $SEARCHFOR   = '/dev/evms/.nodes';
+	my $SEARCHFOR   = '/dev/';
 	my $LINE        = 0;
 
 	if ( SDP::Core::getSection($FILE_OPEN, $SECTION, \@CONTENT) ) {
@@ -72,10 +71,8 @@ sub sbdPartitionMissing {
 		}
 	} else {
 		SDP::Core::updateStatus(STATUS_ERROR, "Cannot find \"$SECTION\" section in $FILE_OPEN");
-		$RCODE--;
 	}
 	printDebug("RETURN", $RCODE);
-	printDebug('<', 'sbdPartitionMissing');
 	return $RCODE;
 }
 
@@ -85,13 +82,11 @@ sub sbdPartitionMissing {
 ##############################################################################
 
 SDP::Core::processOptions();
-
 	if ( sbdPartitionMissing() ) {
 		SDP::Core::updateStatus(STATUS_CRITICAL, "The node cannot see the SBD partition with sbdutil -f");		
 	} else {
-		SDP::Core::updateStatus(STATUS_ERROR, "The node sees the SBD partition");		
+		SDP::Core::updateStatus(STATUS_IGNORE, "The node sees the SBD partition");		
 	}
-
 SDP::Core::printPatternResults();
 exit;
 

@@ -1,6 +1,7 @@
 -------------------------------------------------------------------
-Wed Apr 23 01:49:51 UTC 2014 - jrecord@suse.com
+Fri Apr 25 17:13:46 UTC 2014 - jrecord@suse.com
 
+- Fixed ncs-00001.pl sbd not found error (bnc#774223)
 - Fixed reg-00001.pl uninitialized value
 
 -------------------------------------------------------------------
