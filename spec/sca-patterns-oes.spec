@@ -5,7 +5,9 @@
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
-
+# Source developed at:
+#  https://github.com/g23guy/sca-patterns-oes
+#
 # norootforbuild
 # neededforbuild
 
@@ -19,7 +21,7 @@
 
 Name:         sca-patterns-oes
 Summary:      Supportconfig Analysis Patterns for OES
-URL:          https://bitbucket.org/g23guy/sca-patterns-oes
+URL:          https://github.com/g23guy/sca-patterns-oes
 Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
