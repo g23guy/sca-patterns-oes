@@ -1,6 +1,7 @@
 -------------------------------------------------------------------
-Thu Jul 24 21:40:16 UTC 2014 - jrecord@suse.com
+Thu Jul 24 21:47:09 UTC 2014 - jrecord@suse.com
 
+- Added oes11sp1 and oes11sp2 directories
 - New Patterns
   oes11sp1/dsfw-7014322-sp1.py
   oes11sp2/casa-7015222_2.py
