@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Thu Jul 24 21:28:27 UTC 2014 - jrecord@suse.com
+
+- New Patterns
+  oes11sp1/dsfw-7014322-sp1.py
+  oes11sp2/casa-7015222_2.py
+  oes11sp2/dsfw-7014322-sp2.py
+
+-------------------------------------------------------------------
 Fri Apr 25 21:08:58 UTC 2014 - jrecord@suse.com
 
 - Fixed reg-00001.pl uninitialized value
