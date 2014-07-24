@@ -29,7 +29,9 @@
 # Module Definition
 ##############################################################################
 
-import sys, os, Core, SUSE
+import os
+import Core
+import SUSE
 
 ##############################################################################
 # Overriden (eventually or in part) from SDP::Core Module
