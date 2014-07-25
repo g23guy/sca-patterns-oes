@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Fri Jul 25 16:23:54 UTC 2014 - jrecord@suse.com
+
+- Changed newest patterns to linux file format
+
+-------------------------------------------------------------------
 Thu Jul 24 21:47:09 UTC 2014 - jrecord@suse.com
 
 - Added oes11sp1 and oes11sp2 directories
