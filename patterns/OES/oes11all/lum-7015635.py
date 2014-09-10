@@ -2,7 +2,7 @@
 
 # Title:       LUM authentications hung on server
 # Description: LUM authentications hung on server with nldapbase package
-# Modified:    2014 Sep 08
+# Modified:    2014 Sep 10
 #
 ##############################################################################
 # Copyright (C) 2014 SUSE LLC
@@ -55,7 +55,7 @@ Core.init(META_CLASS, META_CATEGORY, META_COMPONENT, PATTERN_ID, PRIMARY_LINK, O
 SERVER = SUSE.getHostInfo()
 if( SERVER['OES'] ):
 	if( SERVER['OESVersion'] == 11 ):
-		if( SERVER['OESPatchLevel'] == 1 ):
+		if( SERVER['OESPatchLevel'] == 1 or SERVER['OESPatchLevel'] == 2 ):
 			RPM_NAME = 'novell-NLDAPbase'
 			RPM_VERSION = '8.8.7.4-0.4.6.1'
 			if( SUSE.packageInstalled(RPM_NAME) ):
