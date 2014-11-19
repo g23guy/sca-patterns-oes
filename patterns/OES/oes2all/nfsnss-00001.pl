@@ -2,10 +2,10 @@
 
 # Title:       OES Compatibility issues between NSS and NFS
 # Description: Having an OES 2 server NFS export of an NSS file system has some unique needs and concerns
-# Modified:    2013 Jun 20
+# Modified:    2014 Nov 19
 
 ##############################################################################
-#  Copyright (C) 2013 SUSE LLC
+#  Copyright (C) 2013,2014 SUSE LLC
 ##############################################################################
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -104,6 +104,7 @@ sub validateExports {
 			my @LINE_CONTENT = ();
 			@LINE_CONTENT = split(/\s+/, $LINE);
 			my $THIS_MOUNT = shift @LINE_CONTENT; # remove the mount point, consider only the options
+			next if( ! $THIS_MOUNT );
 			my $INVALID_MOUNT = 0;
 			SDP::Core::printDebug("  validateExports CHECKING", $LINE);
 			SDP::Core::printDebug("  validateExports  -THIS_MOUNT", $THIS_MOUNT);
