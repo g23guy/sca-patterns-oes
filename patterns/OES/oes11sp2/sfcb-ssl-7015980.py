@@ -62,8 +62,13 @@ def javaPatchApplied():
 			return True
 	return False
 
-def hotPatchApplied():
-	return SUSE.PatchInfo('December-2014-Hot-Patch').installed
+def patchApplied():
+	if( SUSE.PatchInfo('2015-Scheduled-Maintenance').installed ):
+		return True
+	elif( SUSE.PatchInfo('December-2014-Hot-Patch').installed ):
+		return True
+	else:
+		return False
 
 def errorFound():
 	fileOpen = "messages.txt"
@@ -84,8 +89,8 @@ SFCB = SUSE.getServiceInfo('sfcb')
 #print str(SFCB)
 if( SFCB['OnForRunLevel'] ):
 	if( javaPatchApplied() ):
-		if( hotPatchApplied() ):
-			Core.updateStatus(Core.IGNORE, "Hot patch applied for SFCB SSL, AVOIDED")
+		if( patchApplied() ):
+			Core.updateStatus(Core.IGNORE, "Patch applied for SFCB SSL, AVOIDED")
 		else:
 			if( errorFound() ):
 				Core.updateStatus(Core.CRIT, "Detected iManager storage plugin failure")
