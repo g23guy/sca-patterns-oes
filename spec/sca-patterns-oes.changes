@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Mar 26 16:43:41 UTC 2015 - jrecord@suse.com
+
+- Removed obsolete pattern
+  oes11all/lumcert-00001.pl
+
+-------------------------------------------------------------------
 Wed Dec 17 21:45:22 UTC 2014 - jrecord@suse.com
 
 - New Pattern
