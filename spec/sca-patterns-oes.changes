@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Mon Aug 24 21:47:18 UTC 2015 - jrecord@suse.com
+
+- Update Makefile with obnew
+
+-------------------------------------------------------------------
 Thu Mar 26 16:43:41 UTC 2015 - jrecord@suse.com
 
 - Removed obsolete pattern
