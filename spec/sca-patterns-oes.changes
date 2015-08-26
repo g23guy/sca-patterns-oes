@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Aug 26 17:09:31 UTC 2015 - jrecord@suse.com
+
+- New Pattern
+  oes11all/ncs-lvm-lock-7016788.py
+
+-------------------------------------------------------------------
 Mon Aug 24 21:47:18 UTC 2015 - jrecord@suse.com
 
 - Update Makefile with obnew
