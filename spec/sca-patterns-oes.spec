@@ -78,8 +78,5 @@ install -m %{mode} patterns/%{category}/oes2sp3/* %{buildroot}/%{patdir}/%{categ
 %attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes2all/*
 %attr(%{mode},%{patuser},%{patgrp}) %{patdir}/%{category}/oes2sp3/*
 
-%clean
-rm -rf %{buildroot}
-
 %changelog
 
